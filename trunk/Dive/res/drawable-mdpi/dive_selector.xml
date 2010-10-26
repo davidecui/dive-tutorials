@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- the selector corresponds to StateListDrawable - drawing a specific thing with regard to painter object's state -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:state_pressed="true">
+		<shape>
+			<solid android:color="@color/pressed_dive" />
+		</shape>
+	</item>
+	<item android:state_focused="true">
+		<shape>
+			<solid android:color="@color/sel_dive" />
+		</shape>
+	</item>
+</selector>
