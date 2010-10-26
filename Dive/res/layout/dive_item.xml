@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- defintio of the UI for the single item -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="#454545"
+	android:layout_width="fill_parent" android:layout_height="wrap_content">
+	<ImageView 
+	android:id="@+id/snapshot"
+	android:src="@drawable/default_dive_snapshot"
+	android:background="#FF0000"
+	android:layout_width="68px"
+	android:padding="2px"
+	android:layout_marginRight="10px"
+	android:layout_height="68px"
+	/>
+	<TextView android:layout_width="wrap_content"
+		android:id="@+id/label_coeff"
+		android:layout_marginTop="10px"
+		android:layout_toRightOf="@id/snapshot"
+		android:layout_height="wrap_content" android:text="Dive Coefficient:" />
+	<TextView android:layout_width="wrap_content"
+		android:id="@+id/coeff"
+		android:layout_marginTop="10px"
+		android:layout_toRightOf="@id/label_coeff"
+		android:layout_marginLeft="20px"
+		android:layout_height="wrap_content" android:text="N/A" />
+	<TextView android:layout_width="wrap_content"
+		android:layout_toRightOf="@id/snapshot"
+		android:layout_below="@id/label_coeff"
+		android:layout_height="wrap_content" android:text="Average Mark:" />
+	<TextView android:layout_width="wrap_content"
+		android:layout_toRightOf="@id/snapshot"
+		android:layout_below="@id/coeff"
+		android:layout_alignLeft="@id/coeff"
+		android:id="@+id/mark"
+		android:layout_height="wrap_content" android:text="N/A" />
+</RelativeLayout>
