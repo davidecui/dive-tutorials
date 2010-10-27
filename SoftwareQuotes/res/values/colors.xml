@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="electric_blue">#ff0096FF</color>
+    <color name="electric_blue">#FF0096FF</color>
+    <color name="empty_quotes_bg_color">#FFFF0000</color>
 </resources>

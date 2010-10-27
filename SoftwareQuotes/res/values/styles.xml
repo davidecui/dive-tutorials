@@ -1,11 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Base application theme is the default theme. -->
-    <style name="Theme" parent="android:Theme"></style>
+	<!-- Base application theme is the default theme. -->
+	<style name="Theme" parent="android:Theme"></style>
 
-    <!-- Variation on the Light theme that turns off the title -->
-    <style name="Theme.SWQuotes" parent="android:style/Theme.Light">
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-    </style>
+	<!-- Variation on the Light theme that turns off the title -->
+	<style name="Theme.SWQuotes" parent="android:style/Theme.Light">
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:windowContentOverlay">@null</item>
+	</style>
+
+	<style name="QuotesButton">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:gravity">center</item>
+		<item name="android:background">@drawable/button</item>
+	</style>
+
+	<style name="Title">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:scaleType">fitStart</item>
+		<item name="android:padding">@dimen/title_bg_padding</item>
+		<item name="android:background">@drawable/title_bg</item>
+	</style>
+
+	<style name="QuoteBody">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_weight">1</item>
+		<item name="android:scrollbars">vertical</item>
+		<item name="android:scrollbarStyle">insideOverlay</item>
+		<item name="android:textSize">@dimen/show_quote_body_text_size</item>
+	</style>
+
+	<style name="QuoteAuthor">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_weight">1</item>
+		<item name="android:textSize">@dimen/show_quote_author_text_size</item>
+		<item name="android:gravity">right</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+
+	<style name="QuotesList">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:fastScrollEnabled">true</item>
+	</style>
+	
+	<style name="QuotesListItem">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:padding">8dp</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:textSize">@dimen/list_of_quotes_text_size</item>
+	</style>
+	
+	<style name="Quote" parent="QuotesListItem">
+		<item name="android:ellipsize">end</item>
+	</style>
+
+	<style name="Separator" parent="QuotesListItem">
+		<item name="android:textColor">@android:color/black</item>
+		<item name="android:background">@android:color/darker_gray</item>
+		<item name="android:gravity">right</item>
+	</style>
+
+	<style name="EmptyQuotesList">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_margin">20dp</item>
+		<item name="android:padding">20dp</item>
+		<item name="android:background">@color/empty_quotes_bg_color</item>
+		<item name="android:textSize">20dp</item>
+		<item name="android:textStyle">bold</item>
+	</style>
 </resources>

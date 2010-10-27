@@ -6,12 +6,7 @@
 	<LinearLayout android:orientation="vertical"
 		android:layout_width="match_parent" android:layout_height="match_parent"
 		android:gravity="center">
-		<ListView android:id="@android:id/list" android:layout_width="match_parent"
-			android:layout_height="wrap_content" android:fastScrollEnabled="true" />
-		<TextView android:id="@id/android:empty"
-			android:layout_width="wrap_content" android:layout_margin="20dp"
-			android:padding="20dp" android:layout_height="wrap_content"
-			android:background="#FF0000" android:textSize="20dp"
-			android:textStyle="bold" android:text="Quotes not downloaded! Press menu..." />
+		<ListView android:id="@android:id/list" style="@style/QuotesList"/>
+		<TextView android:id="@id/android:empty" style="@style/EmptyQuotesList" android:text="@string/not_downloaded"/>
 	</LinearLayout>
 </LinearLayout>

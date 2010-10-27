@@ -30,7 +30,8 @@ public class ListQuotesActivity extends LifeCycleLoggingListActivity implements 
 
 	private final static int DIALOG_SYNCING = 0xA;
 	private final static int DIALOG_SYNC_ERROR = 0xB;
-	private final ListQuotesAdapter adapter = new ListQuotesAdapter();
+	private ListQuotesAdapter adapter;
+	
 	private final BroadcastReceiver receiverForSync = new BroadcastReceiver() {
 		@Override
 		public void onReceive(Context context, Intent intent) {
@@ -41,22 +42,29 @@ public class ListQuotesActivity extends LifeCycleLoggingListActivity implements 
 
 	private QuotesDAO dao;
 	private Handler handler;
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		dao = new QuotesDAO(getContentResolver(), this);
 		handler = new Handler();
 		setContentView(R.layout.list_quotes);
+		Object last = getLastNonConfigurationInstance();
+		if (last != null) {
+			adapter = (ListQuotesAdapter) last;
+		} else {
+			adapter = new ListQuotesAdapter();
+			dao.getAllQuotes();
+		}
 		setListAdapter(adapter);
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(QuotesLoader.INTENT_QUOTES_SYNC_DONE);
 		registerReceiver(receiverForSync, filter);
 	}
-
+	
 	@Override
-	protected void onResume() {
-		super.onResume();
-		dao.getAllQuotes();
+	public Object onRetainNonConfigurationInstance() {
+		return adapter;
 	}
 	
 	@Override
@@ -84,7 +92,7 @@ public class ListQuotesActivity extends LifeCycleLoggingListActivity implements 
 		inflater.inflate(R.menu.quotes_menu, menu);
 		return true;
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -94,7 +102,7 @@ public class ListQuotesActivity extends LifeCycleLoggingListActivity implements 
 			syncLauncher.putExtra(QuotesSyncService.EXTRA_RETURN_CHANNEL, new ResultReceiver(handler) {
 				@Override
 				protected void onReceiveResult(int resultCode, Bundle resultData) {
-					L.D(this, "received mex on return channel "+resultCode);
+					L.D(this, "received mex on return channel " + resultCode);
 					if (resultCode == QuotesSyncService.RESULT_ERROR) {
 						dismissDialog(DIALOG_SYNCING);
 						showDialog(DIALOG_SYNC_ERROR, resultData);
