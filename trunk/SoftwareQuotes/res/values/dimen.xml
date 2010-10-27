@@ -3,4 +3,5 @@
 	<dimen name="list_of_quotes_text_size">16dip</dimen>
 	<dimen name="show_quote_body_text_size">20dip</dimen>
 	<dimen name="show_quote_author_text_size">24dip</dimen>
+	<dimen name="title_bg_padding">8dip</dimen>
 </resources>

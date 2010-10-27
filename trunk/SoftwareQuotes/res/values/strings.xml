@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Software Quotes</string>
-    <string name="list_of_quotes">List of Available Quotes</string>
-    <string name="show_quote">Quote</string>
-    <string name="no_quote">No quote was found with that ID, sorry!</string>
-    <string name="ok">OK</string>
-    <string name="sync_quotes">Getting quotes...</string>
-    <string name="sync_error">Sync error!</string>
-    <string name="menu_sync">Refresh Quotes</string>
+	<string name="app_name">Software Quotes</string>
+	<string name="list_of_quotes">List of Available Quotes</string>
+	<string name="show_quote">Quote</string>
+	<string name="no_quote">No quote was found with that ID, sorry!</string>
+	<string name="ok">OK</string>
+	<string name="sync_quotes">Getting quotes...</string>
+	<string name="sync_error">Sync error!</string>
+	<string name="menu_sync">Refresh Quotes</string>
+	<string name="not_downloaded">Quotes not downloaded! Press menu...</string>
 </resources>

@@ -1,8 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/text" android:layout_width="match_parent"
-	android:ellipsize="end"
-	android:singleLine="true"
-	android:padding="8dp"
-	android:textSize="@dimen/list_of_quotes_text_size"
-	android:layout_height="wrap_content" />
+	android:id="@+id/text" style="@style/Quote" />
