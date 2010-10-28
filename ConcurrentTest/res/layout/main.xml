@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:gravity="center">
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="Async TASK"
+		android:onClick="asyncTask" />
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="Thread + Handler TASK"
+		android:onClick="threadHandler" />
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="WRONG Thread TASK"
+		android:onClick="wrongThread" />
+	<Button android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="VERY WRONG TASK"
+		android:onClick="veryWrong" />
+	<TextView android:id="@+id/status" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:textSize="20dp"
+		android:text="READY" />
+	<ProgressBar android:layout_width="200dp"
+		android:layout_height="200dp" android:indeterminate="true" />
+</LinearLayout>
