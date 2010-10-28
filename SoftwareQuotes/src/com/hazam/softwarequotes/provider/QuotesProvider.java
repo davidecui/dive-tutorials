@@ -53,8 +53,8 @@ public class QuotesProvider extends ContentProvider {
 	public Uri insert(Uri uri, ContentValues contentValues) {
 		final SQLiteDatabase db = mQuotesDatabase.getWritableDatabase();
 		if (db != null) {
-			long id = db.insertWithOnConflict(QuotesContract.Tables.QUOTES, QuotesContract.QuotesColumns.QUOTE_ID,
-					contentValues, SQLiteDatabase.CONFLICT_REPLACE);
+			long id = db.insertOrThrow(QuotesContract.Tables.QUOTES, QuotesContract.QuotesColumns.QUOTE_ID,
+					contentValues);
 			return ContentUris.withAppendedId(QuotesContract.Quotes.CONTENT_URI, id);
 		} else {
 			return null;
@@ -75,8 +75,7 @@ public class QuotesProvider extends ContentProvider {
 	public int update(Uri uri, ContentValues contentValues, String s, String[] strings) {
 		final SQLiteDatabase db = mQuotesDatabase.getWritableDatabase();
 		if (db != null) {
-			return db.updateWithOnConflict(QuotesContract.Tables.QUOTES, contentValues, s, strings,
-					SQLiteDatabase.CONFLICT_REPLACE);
+			return db.update(QuotesContract.Tables.QUOTES, contentValues, s, strings);
 		} else {
 			return 0;
 		}

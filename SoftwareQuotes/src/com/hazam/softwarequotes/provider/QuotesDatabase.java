@@ -16,7 +16,7 @@ class QuotesDatabase extends SQLiteOpenHelper {
     private static final String DB_NAME = "quotes.db";
     
     QuotesDatabase(Context ctx) {
-        super(ctx, Environment.getExternalStorageDirectory().getAbsolutePath()+ "/" + DB_NAME, null, VER_START);
+    	super(ctx, /*Environment.getExternalStorageDirectory().getAbsolutePath()+ "/" +*/ DB_NAME, null, VER_START);
     }
 
     @Override

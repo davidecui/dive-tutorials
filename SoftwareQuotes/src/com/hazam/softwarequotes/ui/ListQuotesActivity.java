@@ -105,7 +105,7 @@ public class ListQuotesActivity extends LifeCycleLoggingListActivity implements 
 					L.D(this, "received mex on return channel " + resultCode);
 					if (resultCode == QuotesSyncService.RESULT_ERROR) {
 						dismissDialog(DIALOG_SYNCING);
-						showDialog(DIALOG_SYNC_ERROR, resultData);
+						showDialog(DIALOG_SYNC_ERROR);
 					}
 					// we could add a lot more error codes
 				}
@@ -118,7 +118,7 @@ public class ListQuotesActivity extends LifeCycleLoggingListActivity implements 
 	}
 
 	@Override
-	protected Dialog onCreateDialog(int id, Bundle b) {
+	protected Dialog onCreateDialog(int id) {
 		switch (id) {
 		case DIALOG_SYNCING:
 			ProgressDialog pd = new ProgressDialog(this);
@@ -128,10 +128,10 @@ public class ListQuotesActivity extends LifeCycleLoggingListActivity implements 
 		case DIALOG_SYNC_ERROR:
 			AlertDialog.Builder build = new AlertDialog.Builder(this);
 			build.setTitle(R.string.sync_error);
-			build.setMessage(b.getString(QuotesSyncService.EXTRA_ERROR_CAUSE));
+			//build.setMessage(b.getString(QuotesSyncService.EXTRA_ERROR_CAUSE));
 			return build.create();
 		default:
-			return super.onCreateDialog(id, b);
+			return super.onCreateDialog(id);
 		}
 	}
 }
