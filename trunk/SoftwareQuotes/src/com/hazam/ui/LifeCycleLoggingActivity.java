@@ -11,6 +11,7 @@ public class LifeCycleLoggingActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//Log.i("MYACT","OnCreate()");
 		L.V(this, "onCreate()");
 	}
 
