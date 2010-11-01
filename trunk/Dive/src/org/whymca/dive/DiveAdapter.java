@@ -27,7 +27,8 @@ public class DiveAdapter extends ArrayAdapter<Dive>{
 		//convertView is passed again to the Adapter if we already inflated and
 		//returned a View object no need to reinflate
 		if (convertView == null) {
-			LayoutInflater li = (LayoutInflater) getContext().getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
+			LayoutInflater li = (LayoutInflater) getContext().
+			getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
 			convertView = rl = (RelativeLayout)li.inflate(R.layout.dive_item, null);
 		} else {
 			rl = (RelativeLayout) convertView;
